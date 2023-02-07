@@ -1,4 +1,4 @@
-package com.example.socialmedia
+package com.example.socialmedia.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -10,7 +10,8 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.socialmedia.presentation.theme.SocialMediaTheme
+import com.example.socialmedia.presentation.ui.theme.SocialMediaTheme
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,7 +25,8 @@ class MainActivity : ComponentActivity() {
 
 
                 ) {
-                    Greeting("Android")
+                   // navigation()
+                    Greeting(name = "Bahsy")
                 }
             }
         }
