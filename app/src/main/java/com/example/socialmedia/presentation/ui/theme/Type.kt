@@ -1,4 +1,4 @@
-package com.example.socialmedia.ui.theme
+package com.example.socialmedia.presentation.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle
