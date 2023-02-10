@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">SocialMedia</string>
+    <string name="login">LogIn</string>
+    <string name="EnterusernameorEmail">Enter username or Email</string>
+    <string name="Enterpassword">Password</string>
+    <string name="password_visible_content_description">Password visible</string>
+    <string name="password_hidden_content_description">Password hidden</string>
+    <string name="dont_have_an_account_yet">Don\'t have account yet</string>
+    <string name="sign_up">Sign Up</string>
 </resources>

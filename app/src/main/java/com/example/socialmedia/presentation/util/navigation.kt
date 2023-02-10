@@ -5,6 +5,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.socialmedia.presentation.ui.loginscreen.logInScreen
+import com.example.socialmedia.presentation.ui.sigup.SignUpScreen
 import com.example.socialmedia.presentation.ui.splashscreen.splashScreen
 
 @Composable
@@ -16,6 +17,9 @@ fun navigation() {
         }
         composable(Screens.LoginScreen.route) {
             logInScreen(navController = navController)
+        }
+        composable(Screens.RegisterScreen.route) {
+             SignUpScreen(navController = navController)
         }
     }
 }
