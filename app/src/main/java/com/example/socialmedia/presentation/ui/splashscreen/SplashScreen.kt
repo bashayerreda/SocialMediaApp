@@ -22,11 +22,11 @@ import com.example.socialmedia.presentation.ui.theme.DarkGray
 import com.example.socialmedia.presentation.util.Constants
 import com.example.socialmedia.presentation.util.Screens
 import com.example.socialmedia.presentation.util.navigation
-import kotlinx.coroutines.delay
+import kotlinx.coroutines.*
 
 
 @Composable
-fun splashScreen(navController: NavController){
+fun splashScreen(navController: NavController, dispatcher: CoroutineDispatcher = Dispatchers.Main){
    val scale = remember {
       androidx.compose.animation.core.Animatable(0f)
    }
@@ -34,19 +34,22 @@ fun splashScreen(navController: NavController){
              OvershootInterpolator(2f)
     }
    LaunchedEffect(key1 = true){
-      scale.animateTo(
-        targetValue = 0.9f,
-         animationSpec = tween(
-            durationMillis = 1000,
-             easing = {
-                 overshootInterpolator.getInterpolation(it)
-             }
-         )
-     )
-       //delay(Constants.DELAY_FOR_SPLASH_SCREEN)
-       navController.popBackStack()
-       navController.navigate(Screens.LoginScreen.route)
-   }
+       withContext(dispatcher){
+           scale.animateTo(
+               targetValue = 0.9f,
+               animationSpec = tween(
+                   durationMillis = 1000,
+                   easing = {
+                       overshootInterpolator.getInterpolation(it)
+                   }
+               )
+           )
+           delay(Constants.DELAY_FOR_SPLASH_SCREEN)
+           navController.popBackStack()
+           navController.navigate(Screens.LoginScreen.route)
+       }
+       }
+
    Box(
       modifier = Modifier.fillMaxSize(),
       contentAlignment = Alignment.Center
