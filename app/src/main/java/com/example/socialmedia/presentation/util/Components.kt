@@ -1,8 +1,6 @@
 package com.example.socialmedia.presentation.util
 
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
@@ -11,24 +9,21 @@ import androidx.compose.material.icons.filled.VisibilityOff
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.semantics.semantics
-import androidx.compose.ui.semantics.testTag
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import com.example.socialmedia.R
-import androidx.compose.ui.unit.dp
 
 
 //Change State based on send data to viewModel viewmodel will manage state
 @Composable
 fun InputText(
-    Text: String = "",
+    modifier: Modifier = Modifier,
+    text: String = "",
     hint: String = "",
     isError : Boolean = false,
-    maxSize : Int = 40 ,
+    maxSize : Int = 40,
     keyBoardType : KeyboardType = KeyboardType.Text,
     onValueChanged: (String) -> Unit,
     isPasswordToggleDisplayed: Boolean = keyBoardType == KeyboardType.Password,
@@ -37,7 +32,7 @@ fun InputText(
 ) {
 
    TextField(
-       value =Text
+       value =text
        , onValueChange = {
            if (it.length <= maxSize){
                onValueChanged(it)
@@ -91,11 +86,14 @@ fun InputText(
 
 
 
-       modifier = Modifier.fillMaxWidth()
+       modifier = modifier.fillMaxWidth()
+
+
 
    )
 
 }
+
 
 //change password state based on remember
 /*@Composable

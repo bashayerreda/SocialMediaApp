@@ -1,5 +1,4 @@
 package com.example.socialmedia.presentation.ui.loginscreen
-import android.widget.GridLayout
 import androidx.compose.foundation.clickable
 import com.example.socialmedia.R
 import androidx.compose.foundation.layout.*
@@ -8,14 +7,12 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
-import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.withStyle
-import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.example.socialmedia.presentation.ui.theme.mediumSpace
@@ -39,13 +36,13 @@ fun logInScreen(navController: NavController,viewModel: LoginViewModel = hiltVie
         )
         Spacer(modifier = Modifier.height(mediumSpace))
 
-        InputText(Text = viewModel.usernameText.value,
+        InputText(text = viewModel.usernameText.value,
             hint = stringResource(id = R.string.EnterusernameorEmail),
             onValueChanged = {
                 viewModel.takeUsernameFromView(it)
             })
         Spacer(modifier = Modifier.height(smallSpace))
-        InputText(Text = viewModel.passwordText.value,
+        InputText(text = viewModel.passwordText.value,
             hint = stringResource(id = R.string.Enterpassword),
             onValueChanged = {
                 viewModel.takePasswordFromView(it)
