@@ -58,7 +58,7 @@ class ComponentsTest
 
     }
 
-    @Test
+   @Test
     fun checkIfIconImplemented(){
         composeTestRule.activity.setContent {
             var text by remember {

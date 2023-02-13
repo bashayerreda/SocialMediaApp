@@ -1,5 +1,6 @@
 package com.example.socialmedia.presentation.util
 
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.*
@@ -15,6 +16,7 @@ import androidx.compose.ui.semantics.testTag
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
+import androidx.compose.ui.text.style.TextAlign
 import com.example.socialmedia.R
 
 
@@ -24,6 +26,7 @@ fun InputText(
     modifier: Modifier = Modifier,
     text: String = "",
     hint: String = "",
+    error : String = "",
     isError : Boolean = false,
     maxSize : Int = 40,
     keyBoardType : KeyboardType = KeyboardType.Text,
@@ -96,6 +99,9 @@ fun InputText(
 
 
    )
+    if (error.isNotEmpty()){
+        Text(text = error, color = Color.Red, style = MaterialTheme.typography.body1, textAlign = TextAlign.End, modifier = Modifier.fillMaxWidth())
+    }
 
 }
 

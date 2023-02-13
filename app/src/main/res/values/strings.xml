@@ -7,4 +7,7 @@
     <string name="password_hidden_content_description">Password hidden</string>
     <string name="dont_have_an_account_yet">Don\'t have account yet</string>
     <string name="sign_up">Sign Up</string>
+    <string name="aleardyhaveaccount">Already have an account</string>
+    <string name="Entermail">Enter E-mail</string>
+    <string name="name">Enter name</string>
 </resources>
