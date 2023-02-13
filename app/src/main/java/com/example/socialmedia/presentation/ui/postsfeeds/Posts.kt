@@ -63,7 +63,16 @@ fun Posts(
                     .padding(mediumSpace)
             ) {
                 if (post.userName != null) {
-                    ActionRow(username = post.userName, modifier = Modifier.fillMaxWidth())
+                    ActionRow(username = post.userName, modifier = Modifier.fillMaxWidth(),
+                        likeButtonClicked = {
+
+                    }, commentClicked = {
+
+                    }, shareClicked = {
+
+                    }, onUsernameClick = { userName ->
+
+                        })
                 }
                 Spacer(modifier = Modifier.height(smallSpace))
                 Text(

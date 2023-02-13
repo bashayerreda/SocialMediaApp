@@ -75,10 +75,10 @@ fun engagementButtons(
 @Composable
 fun ActionRow(
     modifier: Modifier = Modifier,
-   // isLiked: Boolean = false,
-   // onLikeClick: (Boolean) -> Unit = {},
-  //  onCommentClick: () -> Unit = {},
-  //  onShareClick: () -> Unit = {},
+    isLiked : Boolean = false,
+    likeButtonClicked : (Boolean) -> Unit = {},
+    commentClicked : () -> Unit = {},
+    shareClicked : () -> Unit = {},
     username: String,
     onUsernameClick: (String) -> Unit = {}
 ) {
@@ -98,6 +98,6 @@ fun ActionRow(
                     onUsernameClick(username)
                 }
         )
-       engagementButtons()
+       engagementButtons(modifier = Modifier,isLiked = isLiked , likeButtonClicked = likeButtonClicked,commentClicked = commentClicked,shareClicked=shareClicked)
     }
 }
