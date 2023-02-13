@@ -1,4 +1,4 @@
-package com.example.socialmedia.presentation.registerscreen
+package com.example.socialmedia.presentation.ui.registerscreen
 
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf

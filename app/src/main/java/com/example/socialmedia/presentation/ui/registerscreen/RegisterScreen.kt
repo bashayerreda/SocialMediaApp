@@ -1,8 +1,7 @@
-package com.example.socialmedia.presentation.registerscreen
+package com.example.socialmedia.presentation.ui.registerscreen
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.Button
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -15,15 +14,11 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.lifecycle.ViewModel
 import androidx.navigation.NavController
 import com.example.socialmedia.R
-import com.example.socialmedia.presentation.ui.loginscreen.LoginViewModel
 import com.example.socialmedia.presentation.ui.theme.mediumSpace
 import com.example.socialmedia.presentation.ui.theme.smallSpace
 import com.example.socialmedia.presentation.util.InputText
-import com.example.socialmedia.presentation.util.Screens
-import dagger.hilt.android.lifecycle.HiltViewModel
 
 @Composable
 fun registerScreen(navController: NavController, viewModel:  RegisterScreenViewModel = hiltViewModel()){
