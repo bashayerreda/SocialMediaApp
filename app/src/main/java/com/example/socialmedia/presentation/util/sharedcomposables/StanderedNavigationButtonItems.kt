@@ -61,11 +61,11 @@ fun RowScope.StandardNavigationButtonItems(
                                color = if (isSelected) selectedColor
                                else unSelectedColor,
                                start = Offset(
-                                   size.width / 2f - lineLength.value * 15.dp.toPx(),
+                                   size.width / 2f - 15.dp.toPx(),
                                    size.height
                                ),
                                end = Offset(
-                                   size.width / 2f + lineLength.value * 15.dp.toPx(),
+                                   size.width / 2f + 15.dp.toPx(),
                                    size.height
                                ),
                                strokeWidth = 2.dp.toPx(),
@@ -90,10 +90,14 @@ fun RowScope.StandardNavigationButtonItems(
                     color = Color.Black,
                     fontWeight = FontWeight.Bold,
                     textAlign = TextAlign.Center,
-                    fontSize = 10.sp,
+                    fontSize = 8.sp,
+
                     modifier = Modifier.align(Alignment.TopCenter)
-                       // .offset(10.dp)
-                        .size(10.dp)
+                        .align(Alignment.TopCenter)
+                        .offset(10.dp)
+                        .size(15.dp)
+                        .clip(CircleShape)
+                        .background(MaterialTheme.colors.primary)
 
 
                 )
