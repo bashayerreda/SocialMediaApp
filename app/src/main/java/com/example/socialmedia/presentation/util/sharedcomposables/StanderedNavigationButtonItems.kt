@@ -1,6 +1,5 @@
 package com.example.socialmedia.presentation.util.sharedcomposables
 
-import android.inputmethodservice.Keyboard
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
@@ -31,7 +30,7 @@ import kotlin.jvm.Throws
 @Throws(IllegalArgumentException::class)
 fun RowScope.StandardNavigationButtonItems(
     modifier: Modifier = Modifier,
-    isSelected : Boolean = false,
+    selected : Boolean = false,
     enabled : Boolean = true,
     selectedColor : Color = MaterialTheme.colors.primary,
     unSelectedColor : Color = HintGray,
@@ -44,13 +43,13 @@ fun RowScope.StandardNavigationButtonItems(
         throw IllegalArgumentException("Couldn't be negative numbers")
     }
     val lineLength = animateFloatAsState(
-        targetValue = if(isSelected) 1f else 0f,
+        targetValue = if(selected) 1f else 0f,
         animationSpec = tween(
             durationMillis = 300
         )
     )
 
-    BottomNavigationItem(selected = isSelected ,enabled=enabled, selectedContentColor = selectedColor,
+    BottomNavigationItem(onClick = onClick ,selected = selected ,enabled=enabled, selectedContentColor = selectedColor,
        unselectedContentColor = unSelectedColor, modifier = modifier, icon = { Box(
                modifier = Modifier
                    .fillMaxSize()
@@ -58,7 +57,7 @@ fun RowScope.StandardNavigationButtonItems(
                    .drawBehind {
                        if (lineLength.value > 0f) {
                            drawLine(
-                               color = if (isSelected) selectedColor
+                               color = if (selected) selectedColor
                                else unSelectedColor,
                                start = Offset(
                                    size.width / 2f - 15.dp.toPx(),
@@ -104,6 +103,10 @@ fun RowScope.StandardNavigationButtonItems(
             }
            }
 
-           } ,   onClick = onClick)
+           }
+    )
+
+
+
 
 }
