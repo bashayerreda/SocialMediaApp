@@ -60,11 +60,11 @@ fun RowScope.StandardNavigationButtonItems(
                                color = if (selected) selectedColor
                                else unSelectedColor,
                                start = Offset(
-                                   size.width / 2f - 15.dp.toPx(),
+                                   size.width / 2f - lineLength.value * 15.dp.toPx(),
                                    size.height
                                ),
                                end = Offset(
-                                   size.width / 2f + 15.dp.toPx(),
+                                   size.width / 2f + lineLength.value * 15.dp.toPx(),
                                    size.height
                                ),
                                strokeWidth = 2.dp.toPx(),

@@ -14,6 +14,7 @@ import com.example.socialmedia.Messages
 import com.example.socialmedia.Profile
 import com.example.socialmedia.presentation.ui.registerscreen.registerScreen
 import com.example.socialmedia.presentation.ui.loginscreen.logInScreen
+import com.example.socialmedia.presentation.ui.postdetailsscreen.PostDetailsScreen
 import com.example.socialmedia.presentation.ui.postsfeeds.Feeds
 import com.example.socialmedia.presentation.ui.splashscreen.splashScreen
 
@@ -44,6 +45,10 @@ fun navigation(navController: NavHostController) {
         composable(Screens.ProfileScreen.route) {
             Profile(navController = navController)
         }
+        composable(Screens.PostDetailsScreen.route) {
+            PostDetailsScreen(navController = navController)
+        }
+
 
 
     }

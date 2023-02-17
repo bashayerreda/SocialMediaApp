@@ -1,26 +1,31 @@
 package com.example.socialmedia.presentation.util
 
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.outlined.House
 import androidx.compose.material.icons.outlined.Message
 import androidx.compose.material.icons.outlined.Notifications
 import androidx.compose.material.icons.outlined.Person
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.socialmedia.domain.models.StandardNavigationBottomItemsData
 import com.example.socialmedia.presentation.util.sharedcomposables.StandardNavigationButtonItems
-
+import com.example.socialmedia.R
 
 @Composable
 fun StandardScaffold(content: @Composable () -> Unit  ,
     modifier: Modifier = Modifier,
                       showButtonBar : Boolean = true,
                       navController: NavController,
+                     floatingOnClick : () -> Unit = {},
                      BottomNavigationItem : List<StandardNavigationBottomItemsData>  = listOf(
     StandardNavigationBottomItemsData(
         route = Screens.MainFeedScreen.route,
@@ -33,6 +38,12 @@ fun StandardScaffold(content: @Composable () -> Unit  ,
         icon =  Icons.Outlined.Message,
         contentDescription = "Message",
         count =  50
+    ),
+    StandardNavigationBottomItemsData(
+        route = "",
+        icon =  null,
+        contentDescription = null,
+        count =  null
     ),
     StandardNavigationBottomItemsData(
         route = Screens.ActivityScreen.route,
@@ -78,8 +89,26 @@ fun StandardScaffold(content: @Composable () -> Unit  ,
                 }
             }
         }
+   },
+
+    floatingActionButton = {
+        if(showButtonBar) {
+           FloatingActionButton(
+                onClick = floatingOnClick,
+                backgroundColor = MaterialTheme.colors.primary,
+            )
+            {
+                Icon(
+                    imageVector = Icons.Default.Add,
+                    contentDescription = stringResource(id = R.string.AddPosts)
+                )
+
+            }
+        }
     },
-            modifier = modifier
+    isFloatingActionButtonDocked = true,
+    floatingActionButtonPosition = FabPosition.Center,
+    modifier = modifier
 )
 
 {
