@@ -51,6 +51,7 @@ fun logInScreen(navController: NavController,viewModel: LoginViewModel = hiltVie
 
             InputText(text = viewModel.usernameText.value,
                 hint = stringResource(id = R.string.EnterusernameorEmail),
+                keyBoardType = KeyboardType.Email,
                 onValueChanged = {
                     viewModel.takeUsernameFromView(it)
                 })

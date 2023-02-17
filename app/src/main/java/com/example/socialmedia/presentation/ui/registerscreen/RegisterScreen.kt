@@ -48,12 +48,14 @@ fun registerScreen(navController: NavController, viewModel:  RegisterScreenViewM
 
             InputText(text = viewModel.usernameText.value,
                 hint = stringResource(id = R.string.name),
+                keyBoardType = KeyboardType.Text,
                 onValueChanged = {
                     viewModel.takeUsernameFromView(it)
                 })
             Spacer(modifier = Modifier.height(mediumSpace))
             InputText(text = viewModel.email.value,
                 hint = stringResource(id = R.string.Entermail),
+                keyBoardType = KeyboardType.Email,
                 onValueChanged = {
                     viewModel.takeMailFromView(it)
                 })

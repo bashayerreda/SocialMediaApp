@@ -1,20 +1,18 @@
 package com.example.socialmedia.presentation.util
 
-import android.provider.ContactsContract
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import androidx.navigation.compose.rememberNavController
 import com.example.socialmedia.ActivityScreen
 import com.example.socialmedia.Messages
 import com.example.socialmedia.Profile
+import com.example.socialmedia.presentation.ui.addpostscreen.AddPostScreen
 import com.example.socialmedia.presentation.ui.registerscreen.registerScreen
 import com.example.socialmedia.presentation.ui.loginscreen.logInScreen
-import com.example.socialmedia.presentation.ui.postdetailsscreen.PostDetailsScreen
+import com.example.socialmedia.presentation.ui.addpostscreen.AddPostScreen
 import com.example.socialmedia.presentation.ui.postsfeeds.Feeds
 import com.example.socialmedia.presentation.ui.splashscreen.splashScreen
 
@@ -46,7 +44,7 @@ fun navigation(navController: NavHostController) {
             Profile(navController = navController)
         }
         composable(Screens.PostDetailsScreen.route) {
-            PostDetailsScreen(navController = navController)
+            AddPostScreen(navController = navController)
         }
 
 

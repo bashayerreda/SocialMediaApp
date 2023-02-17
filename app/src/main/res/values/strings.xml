@@ -22,4 +22,6 @@
     <string name="Activity">ActivityName</string>
     <string name="Person">Person</string>
     <string name="AddPosts">Add posts</string>
+    <string name="back">Back</string>
+    <string name="searchForItem">Search</string>
 </resources>
