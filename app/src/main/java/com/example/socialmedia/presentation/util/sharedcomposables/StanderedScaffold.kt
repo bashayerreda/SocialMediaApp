@@ -17,7 +17,7 @@ import com.example.socialmedia.presentation.util.sharedcomposables.StandardNavig
 
 
 @Composable
-fun StandardScaffold(content: @Composable () -> Unit = {} ,
+fun StandardScaffold(content: @Composable () -> Unit  ,
     modifier: Modifier = Modifier,
                       showButtonBar : Boolean = true,
                       navController: NavController,
@@ -68,6 +68,7 @@ fun StandardScaffold(content: @Composable () -> Unit = {} ,
                             enabled = bottomNavItem.icon != null,
                             onClick = {
                                 bottomNavItem.route?.let {
+                                    if (navController.currentDestination?.route != bottomNavItem.route)
                                     navController.navigate(it)
                                 }
 
@@ -77,8 +78,10 @@ fun StandardScaffold(content: @Composable () -> Unit = {} ,
                 }
             }
         }
-    }
+    },
+            modifier = modifier
 )
+
 {
                   content()
                }

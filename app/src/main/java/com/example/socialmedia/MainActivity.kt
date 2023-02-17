@@ -40,12 +40,11 @@ class MainActivity : ComponentActivity() {
                         navController = navController,
                         showButtonBar = navBackStackEntry?.destination?.route in listOf(
                             Screens.MainFeedScreen.route,
-                            Screens.ChatScreen.route,
+                            Screens.MessagesScreen.route,
                             Screens.ActivityScreen.route,
                             Screens.ProfileScreen.route,
                         ),
-                        modifier = Modifier.fillMaxSize(),
-                        )
+                        modifier = Modifier.fillMaxSize(), content = {})
                    navigation(navController = navController)
                     }
                 }

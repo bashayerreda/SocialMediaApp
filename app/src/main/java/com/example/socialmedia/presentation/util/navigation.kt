@@ -1,7 +1,9 @@
 package com.example.socialmedia.presentation.util
 
 import android.provider.ContactsContract
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
@@ -17,8 +19,10 @@ import com.example.socialmedia.presentation.ui.splashscreen.splashScreen
 
 @Composable
 fun navigation(navController: NavHostController) {
-    val navController = rememberNavController()
-    NavHost(navController = navController, startDestination = Screens.SplashScreen.route) {
+   // val navController = rememberNavController()
+    NavHost(navController = navController,
+        startDestination = Screens.LoginScreen.route,
+        modifier = Modifier.fillMaxSize()) {
         composable(Screens.SplashScreen.route) {
             splashScreen(navController = navController)
         }
