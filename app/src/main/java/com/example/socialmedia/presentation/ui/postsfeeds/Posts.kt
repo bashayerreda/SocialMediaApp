@@ -2,6 +2,7 @@ package com.example.socialmedia.presentation.ui.postsfeeds
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.MaterialTheme
@@ -50,6 +51,9 @@ fun Posts(
                 .clip(MaterialTheme.shapes.medium)
                 .shadow(5.dp)
                 .background(MediumGray)
+                .clickable {
+                    onPostsClicked()
+                }
 
         ) {
             Image(

@@ -37,7 +37,8 @@ val Typography = Typography(
     body2 = TextStyle(
         fontFamily = quickSandFont,
         fontWeight = FontWeight.Normal,
-        fontSize = 12.sp
+        fontSize = 12.sp,
+        color = TextWhite
     )
 
     /* Other default text styles to override

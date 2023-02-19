@@ -21,7 +21,7 @@ fun Feeds(navController: NavController){
     Column(Modifier.fillMaxWidth()) {
         StandardToolBar(navController = navController, title = {
             Text(text = "Your Feeds")
-        }, modifier = Modifier, showBackArrow = true, navAction = {
+        }, modifier = Modifier, showBackArrow = false, navAction = {
             IconButton(onClick = {
                 navController.navigate(Screens.PostDetailsScreen.route)
             }) {
@@ -45,7 +45,7 @@ fun Feeds(navController: NavController){
                 imageUrl = ""
             ),
             onPostsClicked = {
-
+                 navController.navigate(Screens.PostDetailsScreen.route)
             }
         )
     }

@@ -45,7 +45,7 @@ class MainActivity : ComponentActivity() {
                             Screens.ProfileScreen.route,
                         ),
                         modifier = Modifier.fillMaxSize(), content = {}, floatingOnClick = {
-                            navController.navigate(Screens.PostDetailsScreen.route)
+                            navController.navigate(Screens.CreatePostScreen.route)
                         })
                    navigation(navController = navController)
                     }
